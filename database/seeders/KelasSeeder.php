@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Kelas;
 
 class KelasSeeder extends Seeder
 {
@@ -12,6 +13,14 @@ class KelasSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $data =[
+            'A','B','C','D',
+        ];
+
+        foreach($data as $Kelas){
+            Kelas::create([
+                'nama_kelas' => $Kelas,
+            ]);
+        }
     }
 }
