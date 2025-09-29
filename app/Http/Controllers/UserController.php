@@ -21,7 +21,7 @@ class UserController extends Controller
             'title' => 'List User',
             'users' => $this->userModel->getUser()
         ];
-        return view('list-user', $data);
+        return view('list_user', $data);
     }
 
     public function create(){
