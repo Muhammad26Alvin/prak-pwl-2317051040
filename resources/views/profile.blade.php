@@ -1,31 +1,29 @@
-<!DOCTYPE html>
-<html lang="id">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@section('content')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<div class="min-vh-100 d-flex align-items-center justify-content-center" 
+     style="background: linear-gradient(to right, #fde047, #ffffff, #b45309);">
 
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-yellow-500 via-white-500 to-brown-500">
-
-    <div class="bg-white/20 backdrop-blur-md rounded-2xl shadow-xl p-8 w-80 text-center text-white">
-        <!-- Profile Picture -->
-        <div class="flex justify-center mb-6 relative">
+    <!-- Card Horizontal -->
+    <div class="d-flex bg-white bg-opacity-50 rounded-4 shadow-lg p-4" style="width: 700px;">
+        
+        <!-- Left: Foto -->
+        <div class="d-flex flex-column align-items-center pe-4 border-end">
             <img src="{{ asset('storage/alvin_idv.png') }}" alt="Profile"
-                class="w-28 h-28 rounded-full border-4 border-white shadow-lg object-cover">
+                 class="rounded-circle border border-3 border-white shadow mb-3" width="120" height="120">
+            <h5 class="fw-bold mb-0">{{ $Nama }}</h5>
         </div>
 
-
-        <!-- Profile Info -->
-        <div class="space-y-4">
-            <div class="bg-white/30 rounded-lg py-3 font-bold text-lg shadow">{{ $Nama }}</div>
-            <div class="bg-white/30 rounded-lg py-3 font-bold text-lg shadow">{{ $NPM }}</div>
-            <div class="bg-white/30 rounded-lg py-3 font-bold text-lg shadow">{{ $Kelas }}</div>
+        <!-- Right: Info -->
+        <div class="d-flex flex-column justify-content-center ps-4 flex-grow-1 gap-3">
+            <div class="bg-white bg-opacity-75 rounded py-2 px-3 fw-semibold shadow-sm">NPM: {{ $NPM }}</div>
+            <div class="bg-white bg-opacity-75 rounded py-2 px-3 fw-semibold shadow-sm">Kelas: {{ $Kelas }}</div>
+            <div class="bg-white bg-opacity-75 rounded py-2 px-3 shadow-sm">Tentang Saya</div>
+            <div class="bg-white bg-opacity-75 rounded py-2 px-3 shadow-sm">Kontak Saya</div>
         </div>
     </div>
 
-</body>
-
-</html>
+</div>
+@endsection
