@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Matakuliah;
 
+##ngetes karna gabisa push
+
 
 class MataKuliahController extends Controller
 {
